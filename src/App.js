@@ -1,19 +1,10 @@
-import { Container, Paper } from "@mui/material";
-import Navbar from "./Components/Navbar/Navbar";
-import Search from "./Components/Search/Search";
+import Register from "./Components/Register";
 
 function App() {
   return (
-    <Paper
-      sx={{
-        background: "#000",
-      }}
-    >
-      <Container maxWidth="lg">
-        <Navbar />
-        <Search />
-      </Container>
-    </Paper>
+    <div>
+      <Register />
+    </div>
   );
 }
 
