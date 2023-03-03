@@ -1,3 +1,9 @@
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import SwiperCore, { Autoplay } from "swiper";
+import styled from "@emotion/styled";
 import {
   Box,
   Button,
@@ -6,35 +12,26 @@ import {
   MenuItem,
   Select,
   Stack,
-  styled,
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import SwiperCore, { Autoplay } from "swiper";
 import { Pagination } from "swiper";
 import img1 from "../assets/img1.png";
 import img2 from "../assets/img2.png";
 import img3 from "../assets/img3.png";
 import registerLogo from "../assets/registerlogo.png";
-import "./Register.css";
-const RegisterContainerWrapper = styled(Box)(({ theme }) => ({
-  // padding: theme.spacing(4),
+
+const LoginContainerWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   width: "100%",
-  
 }));
 
-const RegisterWrapper = styled(Box)(({ theme }) => ({
+const LoginWrapper = styled(Box)(({ theme }) => ({
   width: "55vw",
   background: "#E5E5E5",
-  height: "auto",
 }));
 
-const RegisterButton = styled(Button)({
+const LoginButton = styled(Button)({
   boxShadow: "none",
   textTransform: "none",
   fontSize: 18,
@@ -55,7 +52,7 @@ const RegisterButton = styled(Button)({
     backgroundColor: "#061242",
   },
 });
-const Register = () => {
+const Login = () => {
   const [role, setRole] = useState("");
   const [client, setClient] = useState("");
   SwiperCore.use([Autoplay]);
@@ -66,7 +63,7 @@ const Register = () => {
     setClient(e.target.value);
   };
   return (
-    <RegisterContainerWrapper>
+    <LoginContainerWrapper>
       <Box
         sx={{
           background:
@@ -272,12 +269,12 @@ const Register = () => {
           </SwiperSlide>
         </Swiper>
       </Box>
-      <RegisterWrapper>
+      <LoginWrapper>
         <Box
           sx={{
             display: "flex",
             justifyContent: "center",
-            margin: "77px 0",
+            margin: "130px 0",
           }}
         >
           <Box
@@ -310,7 +307,7 @@ const Register = () => {
                   color: "#2C2C2C",
                 }}
               >
-                Register Now!
+                Log In!
               </Typography>
               <Typography
                 sx={{
@@ -321,7 +318,7 @@ const Register = () => {
                   marginTop: "12px",
                 }}
               >
-                Create Your Thermelgy Profile
+                Start Saving Now
               </Typography>
             </Box>
             <Box component="form">
@@ -349,91 +346,33 @@ const Register = () => {
                   fullWidth
                   required
                 />
-
-                <FormControl sx={{ m: 1, minWidth: 80 }}>
-                  <InputLabel id="role-label">Role*</InputLabel>
-                  <Select
-                    labelId="role-label"
-                    id="demo-simple-select-autowidth"
-                    value={role}
-                    onChange={handleChange}
-                    autoWidth
-                    label="Role*"
-                    required
-                  >
-                    <MenuItem
-                      value="User"
-                      sx={{
-                        width: "485px",
-                      }}
-                    >
-                      User
-                    </MenuItem>
-                    <MenuItem
-                      value="Admin"
-                      sx={{
-                        width: "485px",
-                      }}
-                    >
-                      Admin
-                    </MenuItem>
-                    <MenuItem
-                      value="Super Admin"
-                      sx={{
-                        width: "485px",
-                      }}
-                    >
-                      Super Admin
-                    </MenuItem>
-                  </Select>
-                </FormControl>
-                <FormControl sx={{ m: 1, minWidth: 80 }}>
-                  <InputLabel id="clients-label">Clients*</InputLabel>
-                  <Select
-                    labelId="clients-label"
-                    id="client"
-                    value={client}
-                    onChange={handleClient}
-                    autoWidth
-                    label="Clients*"
-                    required
-                  >
-                    <MenuItem
-                      value="Client -1"
-                      sx={{
-                        width: "485px",
-                      }}
-                    >
-                      Client -1
-                    </MenuItem>
-                    <MenuItem
-                      value="Client -2"
-                      sx={{
-                        width: "485px",
-                      }}
-                    >
-                      Client -2
-                    </MenuItem>
-                    <MenuItem
-                      value="Client -3"
-                      sx={{
-                        width: "485px",
-                      }}
-                    >
-                      Client -3
-                    </MenuItem>
-                  </Select>
-                </FormControl>
-
                 <Box
                   sx={{
-                    display: "grid",
-                    placeItems: "center",
+                    width: "117",
                   }}
                 >
-                  <RegisterButton variant="contained">Register</RegisterButton>
+                  <Button
+                  
+                    sx={{
+                      fontSize: "14px",
+
+                      color: "#545B69",
+                      textTransform: "capitalize"
+                    }}
+                  >
+                    Forget password?
+                  </Button>
                 </Box>
               </Stack>
+              <Box
+                sx={{
+                  display: "grid",
+                  placeItems: "center",
+                  marginTop: "5rem",
+                }}
+              >
+                <LoginButton variant="contained">Register</LoginButton>
+              </Box>
             </Box>
           </Box>
 
@@ -453,9 +392,9 @@ const Register = () => {
             </Typography>
           </Box> */}
         </Box>
-      </RegisterWrapper>
-    </RegisterContainerWrapper>
+      </LoginWrapper>
+    </LoginContainerWrapper>
   );
 };
 
-export default Register;
+export default Login;
