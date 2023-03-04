@@ -53,15 +53,8 @@ const LoginButton = styled(Button)({
   },
 });
 const Login = () => {
-  const [role, setRole] = useState("");
-  const [client, setClient] = useState("");
   SwiperCore.use([Autoplay]);
-  const handleChange = (event) => {
-    setRole(event.target.value);
-  };
-  const handleClient = (e) => {
-    setClient(e.target.value);
-  };
+
   return (
     <LoginContainerWrapper>
       <Box
@@ -352,12 +345,11 @@ const Login = () => {
                   }}
                 >
                   <Button
-                  
                     sx={{
                       fontSize: "14px",
 
                       color: "#545B69",
-                      textTransform: "capitalize"
+                      textTransform: "capitalize",
                     }}
                   >
                     Forget password?
@@ -371,7 +363,7 @@ const Login = () => {
                   marginTop: "5rem",
                 }}
               >
-                <LoginButton variant="contained">Register</LoginButton>
+                <LoginButton variant="contained">Log In</LoginButton>
               </Box>
             </Box>
           </Box>
